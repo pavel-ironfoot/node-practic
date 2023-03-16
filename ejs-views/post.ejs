@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <header>
+        <h1>index html</h1>
+        <%- include('./partials/nav.ejs') %>
+        </header>
+    <main>
+        <hr>
+        <p>
+            <%= post.createdAt.toLocaleDateString() || 'No data' %>
+        </p>
+        <p>
+            <%= post.author %>
+        </p>
+        <h3>
+            <%= post.title %>
+        </h3>
+        <p>
+            <%= post.text %>
+        </p>
+        <a href="/edit/<%= post.id %>">edit</a>
+        <button data-id="<%= post.id %>">
+            X
+        </button>
+        <hr>
+    </main>
+    <footer>
+        <p>some footer</p>
+    </footer>
+    <script>
+        document.addEventListener('click', (e)=>{
+            const id = e.target?.dataset?.id || null;
+            if(id){
+                fetch(`/posts/${id}`,{
+                    method: 'DELETE',
+                }).then(()=>{
+                    window.location.href = '/posts';
+                });
+            }
+        })
+    </script>
+</body>
+</html>

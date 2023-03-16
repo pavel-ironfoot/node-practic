@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <header>
+        <h1>index html</h1>
+        <%- include('./partials/nav.ejs') %>
+        </header>
+    <main>
+        <hr>
+        <h3>Contacts:</h3>
+        <% if (contacts.length) { %>
+            <% contacts.forEach(({link,name}) =>{ %>
+                <div>
+                    <a target="_blank" href="<%= link %>"><%= name %></a>
+                </div>
+            <% }) %>
+        <% } %>        
+        <!-- <div>
+            <a target="_blank" href="https://www.youtube.com/SlimDwarfPavelIronfoot">YouTube</a>        
+        </div>
+        <div>           
+            <a target="_blank" href="https://github.com/pavel-ironfoot">GitHub</a>   
+        </div>
+        <div>
+            <a target="_blank" href="https://www.instagram.com/slim_dwarf/">Instagram</a>
+        </div> -->
+        <hr>
+    </main>
+    <footer>
+        <p>some footer</p>
+    </footer>
+</body>
+</html>

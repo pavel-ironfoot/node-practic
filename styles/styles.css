@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(124, 122, 122);
+}
+main div{
+    padding: 5px;
+}
+footer p{
+    padding-left: 15px;
+    font-size: 20px;
+}
+.one-post{
+    padding: 15px;
+    background-color: rgb(129, 136, 155);
+    margin-bottom: 10px;
+}
+input, textarea{
+    padding: 5px;
+    font-size: 16px;
+}
